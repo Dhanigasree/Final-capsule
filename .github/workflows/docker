@@ -1,5 +1,4 @@
-name: CI Pipeline
-
+name: Docker
 on:
   push:
     branches: [ main, master ]
