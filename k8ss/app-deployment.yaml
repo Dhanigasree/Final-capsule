@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: image: ghcr.io/dhanigasree/final-capsule:latest
+        image: ghcr.io/dhanigasree/final-capsule:latest
         ports:
         - containerPort: 3000
         env:
