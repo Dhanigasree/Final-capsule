@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/Dhanigasree/Final-capsule.git
     targetRevision: main
-    path: k8s
+    path: k8ss
 
   destination:
     server: https://kubernetes.default.svc
