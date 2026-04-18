@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: shaikhamadi/logistics-tracker-app:latest
+        image: image: ghcr.io/dhanigasree/final-capsule:latest
         ports:
         - containerPort: 3000
         env:
@@ -26,16 +26,22 @@ spec:
           value: "3000"
         - name: MONGODB_URI
           value: "mongodb://mongodb:27017/logistics-tracker"
-        - name: JWT_SECRET
-          value: "your-super-secret-jwt-key-change-this-in-production"
         - name: RATE_LIMIT_WINDOW_MS
           value: "900000"
         - name: RATE_LIMIT_MAX_REQUESTS
           value: "100"
         - name: API_VERSION
           value: "v1"
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: app-secret
+              key: JWT_SECRET
         - name: SESSION_SECRET
-          value: "your-session-secret-change-this-too"
+          valueFrom:
+            secretKeyRef:
+              name: app-secret
+              key: SESSION_SECRET      
         resources:
           requests:
             memory: "256Mi"
